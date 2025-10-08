@@ -13,6 +13,7 @@ export default function Home() {
       </Head>
       <main>
         <h1>Jordan Smith Studio</h1>
+        <p>I&apos;m Jordan Smith. I&apos;m a Nashville area artist known for mesmerizing layered artworks, I explore the concept of existence in time through textures, inviting viewers to engage with evolving compositions inspired by nature.</p>
       </main>
       <footer>
       </footer>
