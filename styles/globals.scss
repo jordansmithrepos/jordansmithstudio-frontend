@@ -1,0 +1,56 @@
+/* VARIABLES ========== */
+$animate_all_200: all 200ms ease-in-out;
+$black: #000;
+$white: #fff;
+
+/* ======================================================================
+  GLOBAL STYLES
+========================================================================= */
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: 'Courier Prime', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+html {
+  overflow: initial;
+}
+body.page_home {
+  &.scroll_lock {
+    overflow: hidden;
+  }
+}
+::-moz-selection {
+  background-color: #000;
+  color: #fff;
+}
+::selection {
+  background-color: #000;
+  color: #fff;
+}
+
+
+
+/* ===================================================================================
+  RESPONSIVE STYLES
+====================================================================================== */
+
+// -xs
+@media ( max-width: 575px ) {}
+// -sm
+@media ( min-width: 576px ) {}
+@media ( max-width: 767px ) {}
+// -md
+@media ( min-width: 768px ) {}
+// -lg
+@media ( min-width: 992px ) {}
+// -xl
+@media ( min-width: 1200px ) {}
+// -xxl
+@media ( min-width: 1400px ) {}
