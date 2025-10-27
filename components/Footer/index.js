@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Footer = ({
   footerContent,
 }) => {
-  // console.log( '--> jds footerContent:', footerContent );
+  if (footerContent) console.log( '--> jds footerContent:', footerContent );
   const copyrightYear = new Date().getFullYear();
 
   return (

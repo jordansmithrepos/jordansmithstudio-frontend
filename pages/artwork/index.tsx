@@ -2,16 +2,14 @@
 import { client } from '@/lib/sanityHelpers';
 import { returnImageURL } from '@/lib/helpers';
 import Link from "next/link";
-// import Image from "next/image";
 import {
   BlockContent,
   BlockImage
 } from '@/components';
-// import { Courier_Prime } from "next/font/google";
 
 export async function getStaticProps() {
   const query =
-  `*[ page_slug.current == "home" ][0]{
+  `*[ page_slug.current == "artwork" ][0]{
     meta_description,
     page_slug,
     page_title,
@@ -24,16 +22,16 @@ export async function getStaticProps() {
   }
 }
 
-interface HomeProps {
+interface ArtworkProps {
   pageData: any,
 }
 
-export default function HomePage({pageData}:HomeProps) {
+export default function ArtworkPage({pageData}:ArtworkProps) {
 
   return (
     <>{pageData &&
       <>
-        <main className="page_content home">
+        <main className="page_content artwork">
           {pageData.hero &&
             <section className="hero_row" style={{backgroundImage: 'url(' + returnImageURL(pageData.hero.image) + ')'}}>
               <div className="hero_wrapper">
@@ -63,15 +61,20 @@ export default function HomePage({pageData}:HomeProps) {
                     <BlockImage blockData={section} key={i} />
                   );
                 }
+                if (section._type === 'imageGrid') {
+                  return (
+                    <div key={i} className="imageGrid row">
+                      <div className="col-12">
+                        {section.grid_title && <h2 className="section_title">{section.grid_title}</h2>}
+                        <div className="image_grid">[IMAGE GRID GOES HERE]</div>
+                      </div>
+                    </div>
+                  );
+                }
               })}
             </div>
           </section>
-          <section className="social_row">
-            <div className="container">[IG FEED GOES HERE?]</div>
-          </section>
         </main>
-        <footer>
-        </footer>
       </>}
     </>
   );

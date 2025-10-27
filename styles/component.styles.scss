@@ -1,7 +1,10 @@
 /* VARIABLES ========== */
 $animate_all_200: all 200ms ease-in-out;
+$jss_blue: #06e;
 $jss_ink: #222;
-$jss_paper: #ffe;
+$jss_paper: #fffefd;
+$jss_red: #f04;
+$jss_yellow: #fc0;
 
 
 /* ========================================
@@ -16,6 +19,50 @@ $jss_paper: #ffe;
   }
 }
 
+
+/* ========================================
+  HERO ROW STYLES
+=========================================== */
+
+.hero_row {
+  color: #fff;
+  background-position: 50% 50%;
+  background-size: cover;
+  .hero_wrapper {
+    background-color: #0008;
+    .hero_content {
+      padding: 4rem 0;
+      .cta_wrapper {
+        .cta {
+          color: #fff;
+          border: 1px solid #fff;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
+
+
+/* ========================================
+  CONTENT BLOCK STYLES
+=========================================== */
+
+.block_content {
+  .cta_wrapper {
+    .cta {
+      color: $jss_ink;
+      border: 1px solid $jss_ink;
+      border-radius: 0;
+      transition: $animate_all_200;
+      &:hover {
+        background-color: $jss_ink;
+        color: $jss_paper;
+      }
+    }
+  }
+
+}
 
 
 /* ===================================================================================

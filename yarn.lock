@@ -465,7 +465,7 @@
 
 "@portabletext/react@^4.0.3":
   version "4.0.3"
-  resolved "https://registry.npmjs.org/@portabletext/react/-/react-4.0.3.tgz"
+  resolved "https://registry.yarnpkg.com/@portabletext/react/-/react-4.0.3.tgz#eee5f24f35746e46e0f9d532c875fe5ecc68c201"
   integrity sha512-sdVSXbi0L5MBVb1Ch5KwbBPZjW/Oqe6s5ZkPi4LcItzHl8rqY2jB0VxsFaGywZyn8Jc47cGLaOtyBM9HkW/9Hg==
   dependencies:
     "@portabletext/toolkit" "^3.0.1"

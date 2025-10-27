@@ -1,7 +1,10 @@
 /* VARIABLES ========== */
 $animate_all_200: all 200ms ease-in-out;
+$jss_blue: #06e;
 $jss_ink: #222;
-$jss_paper: #ffe;
+$jss_paper: #fffefd;
+$jss_red: #f04;
+$jss_yellow: #fc0;
 
 /* ======================================================================
   GLOBAL STYLES
@@ -17,6 +20,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  color: $jss_ink;
+  background-color: $jss_paper;
 }
 html {
   overflow: initial;
@@ -34,32 +39,21 @@ body.page_home {
   background-color: #000;
   color: #fff;
 }
+a {
+  color: $jss_ink;
+  text-decoration: underline;
+  transition: $animate_all_200;
+  &:hover {
+    color: $jss_blue;
+  }
+}
 
 
 /* ========================================
   PAGE: HOME
 =========================================== */
 
-.page_content.home {
-  .hero_row {
-    color: #fff;
-    background-position: 50% 50%;
-    background-size: cover;
-    .hero_wrapper {
-      background-color: #0008;
-      .hero_content {
-        padding: 4rem 0;
-        .cta_wrapper {
-          .cta {
-            color: #fff;
-            border: 1px solid #fff;
-            border-radius: 0;
-          }
-        }
-      }
-    }
-  }
-}
+// .page_content.home {}
 
 
 
