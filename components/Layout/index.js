@@ -5,29 +5,32 @@ import Footer from '../Footer';
 
 const Layout = ({
   children,
-  headerPageTitle,
+  footerData,
+  headerData,
   headerMetaDesc,
-  footerContentData,
+  headerPageTitle,
 }) => {
 
   return (
     <>
       <Header
-        headerPageTitle={headerPageTitle}
+        headerData={headerData}
         headerMetaDesc={headerMetaDesc}
+        headerPageTitle={headerPageTitle}
       />
         {children}
       <Footer
-        footerContent={footerContentData}
+        footerContent={footerData}
       />
     </>
   );
 };
 
 Layout.propTypes = {
-  footerContentData: PropTypes.any,
-  headerPageTitle: PropTypes.any,
+  footerData: PropTypes.any,
+  headerData: PropTypes.any,
   headerMetaDesc: PropTypes.any,
+  headerPageTitle: PropTypes.any,
 };
 
 export default Layout;

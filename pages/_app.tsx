@@ -42,7 +42,8 @@ export default function App({ Component, pageProps }: AppProps) {
     <Layout
       headerPageTitle={ pageProps.pageData?.page_title }
       headerMetaDesc={ pageProps.pageData?.meta_description }
-      footerContentData={ pageProps.footerContentData }
+      footerData={ pageProps.footerData }
+      headerData={ pageProps.headerData }
     >
       <Component {...pageProps} />
     </Layout>

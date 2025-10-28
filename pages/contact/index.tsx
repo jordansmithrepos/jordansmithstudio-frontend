@@ -4,7 +4,8 @@ import { returnImageURL } from '@/lib/helpers';
 import Link from "next/link";
 import {
   BlockContent,
-  BlockImage
+  BlockImage,
+  GridOfImages,
 } from '@/components';
 
 export async function getStaticProps() {
@@ -16,9 +17,24 @@ export async function getStaticProps() {
     hero,
     sections,
   }`
+  const queryHeader =
+  `*[_type == "header"][0]{
+    home_link,
+    nav_links,
+  }`
+  const queryFooter =
+  `*[_type == "footer"][0]{
+    copyright_text,
+  }`
   const pageData = await client.fetch(query)
+  const headerData = await client.fetch(queryHeader)
+  const footerData = await client.fetch(queryFooter)
   return {
-    props: { pageData },
+    props: {
+      pageData,
+      footerData,
+      headerData,
+    },
   }
 }
 
@@ -49,7 +65,7 @@ export default function ContactPage({pageData}:ArtworkProps) {
             </section>
           }
           <section className="content_row">
-            <div className="container py-5">
+            <div className="container">
               {pageData.sections && pageData.sections.map((section:any, i:number) => {
                 if (section._type === 'contentBlock') {
                   return (
@@ -63,12 +79,7 @@ export default function ContactPage({pageData}:ArtworkProps) {
                 }
                 if (section._type === 'imageGrid') {
                   return (
-                    <div key={i} className="imageGrid row">
-                      <div className="col-12">
-                        {section.grid_title && <h2 className="section_title">{section.grid_title}</h2>}
-                        <div className="image_grid">[IMAGE GRID GOES HERE]</div>
-                      </div>
-                    </div>
+                    <GridOfImages blockData={section} key={i} />
                   );
                 }
               })}

@@ -8,7 +8,7 @@ const BlockContent = ({
   blockData,
 }) => {
   return (
-  <div className="block_content row d-flex align-items-center">
+  <div className="block_content row d-flex align-items-center mb-5">
     <div className={`col-12${blockData.has_image ? ' col-md-6' : ''}`}>
       {blockData.block_title && <h2 className="section_title">{blockData.block_title}</h2>}
       {blockData.block_copy &&
@@ -32,7 +32,7 @@ const BlockContent = ({
         src={returnImageURL(blockData.block_image)}
         height={600}
         width={600}
-        alt=""
+        alt={blockData.alt_text ? blockData.alt_text : ''}
         className="w-100 h-auto"
       />
     </div>}

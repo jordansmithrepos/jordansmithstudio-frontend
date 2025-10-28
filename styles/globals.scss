@@ -39,13 +39,25 @@ body.page_home {
   background-color: #000;
   color: #fff;
 }
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
 a {
   color: $jss_ink;
   text-decoration: underline;
   transition: $animate_all_200;
   &:hover {
     color: $jss_blue;
+    text-decoration: none;
   }
+  &:focus {
+    background-color: $jss_ink !important;
+    color: $jss_paper !important;
+  }
+}
+
+.content_row {
+  padding: 3rem 0 0;
 }
 
 

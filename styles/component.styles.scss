@@ -12,11 +12,69 @@ $jss_yellow: #fc0;
 =========================================== */
 
 .global_header {
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 4px #2222;
   .home_link {
     color: $jss_ink;
-    text-decoration: none;
     font-weight: bold;
+    text-decoration: none;
+    transition: $animate_all_200;
+    &:hover {
+      color: $jss_red;
+    }
   }
+  .nav_links {
+    .nav_link {
+      color: $jss_ink;
+      text-decoration: underline;
+      transition: $animate_all_200;
+      &:hover {
+        color: $jss_blue;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.mobile_nav {
+  background-color: $jss_paper;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: $animate_all_200;
+  width: 0vw;
+  z-index: 1;
+  &.active {
+    width: 100vw;
+  }
+  .wrapper {
+    width: 100vw;
+    .nav_links {
+      margin-top: 6rem;
+      .nav_link {
+        color: $jss_ink;
+        text-decoration: underline;
+        transition: $animate_all_200;
+        display: block;
+        text-align: right;
+        &:hover {
+          color: $jss_blue;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+
+/* ========================================
+  FOOTER STYLES
+=========================================== */
+
+.global_footer {
+  padding: 3rem 0;
 }
 
 
@@ -29,7 +87,10 @@ $jss_yellow: #fc0;
   background-position: 50% 50%;
   background-size: cover;
   .hero_wrapper {
+    align-items: center;
     background-color: #0008;
+    display: flex;
+    min-height: 20vh;
     .hero_content {
       padding: 4rem 0;
       .cta_wrapper {
@@ -62,6 +123,14 @@ $jss_yellow: #fc0;
     }
   }
 
+}
+
+// GRID OF IMAGES
+
+.grid_of_images {
+  .image_title {
+    white-space: pre-wrap;
+  }
 }
 
 

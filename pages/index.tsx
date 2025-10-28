@@ -18,9 +18,24 @@ export async function getStaticProps() {
     hero,
     sections,
   }`
+  const queryHeader =
+  `*[_type == "header"][0]{
+    home_link,
+    nav_links,
+  }`
+  const queryFooter =
+  `*[_type == "footer"][0]{
+    copyright_text,
+  }`
   const pageData = await client.fetch(query)
+  const headerData = await client.fetch(queryHeader)
+  const footerData = await client.fetch(queryFooter)
   return {
-    props: { pageData },
+    props: {
+      pageData,
+      footerData,
+      headerData,
+    },
   }
 }
 
@@ -51,7 +66,7 @@ export default function HomePage({pageData}:HomeProps) {
             </section>
           }
           <section className="content_row">
-            <div className="container py-5">
+            <div className="container">
               {pageData.sections && pageData.sections.map((section:any, i:number) => {
                 if (section._type === 'contentBlock') {
                   return (
@@ -70,8 +85,6 @@ export default function HomePage({pageData}:HomeProps) {
             <div className="container">[IG FEED GOES HERE?]</div>
           </section>
         </main>
-        <footer>
-        </footer>
       </>}
     </>
   );
