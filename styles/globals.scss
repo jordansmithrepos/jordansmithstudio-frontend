@@ -1,7 +1,10 @@
 /* VARIABLES ========== */
 $animate_all_200: all 200ms ease-in-out;
-$black: #000;
-$white: #fff;
+$jss_blue: #06e;
+$jss_ink: #222;
+$jss_paper: #fffefd;
+$jss_red: #f04;
+$jss_yellow: #fc0;
 
 /* ======================================================================
   GLOBAL STYLES
@@ -17,6 +20,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  color: $jss_ink;
+  background-color: $jss_paper;
 }
 html {
   overflow: initial;
@@ -34,6 +39,33 @@ body.page_home {
   background-color: #000;
   color: #fff;
 }
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+a {
+  color: $jss_ink;
+  text-decoration: underline;
+  transition: $animate_all_200;
+  &:hover {
+    color: $jss_blue;
+    text-decoration: none;
+  }
+  &:focus {
+    background-color: $jss_ink !important;
+    color: $jss_paper !important;
+  }
+}
+
+.content_row {
+  padding: 3rem 0 0;
+}
+
+
+/* ========================================
+  PAGE: HOME
+=========================================== */
+
+// .page_content.home {}
 
 
 

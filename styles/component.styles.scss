@@ -1,11 +1,137 @@
 /* VARIABLES ========== */
 $animate_all_200: all 200ms ease-in-out;
-$black: #000;
-$white: #fff;
+$jss_blue: #06e;
+$jss_ink: #222;
+$jss_paper: #fffefd;
+$jss_red: #f04;
+$jss_yellow: #fc0;
 
-/* ======================================================================
-  COMPONENT STYLES
-========================================================================= */
+
+/* ========================================
+  HEADER STYLES
+=========================================== */
+
+.global_header {
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 4px #2222;
+  .home_link {
+    color: $jss_ink;
+    font-weight: bold;
+    text-decoration: none;
+    transition: $animate_all_200;
+    &:hover {
+      color: $jss_red;
+    }
+  }
+  .nav_links {
+    .nav_link {
+      color: $jss_ink;
+      text-decoration: underline;
+      transition: $animate_all_200;
+      &:hover {
+        color: $jss_blue;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.mobile_nav {
+  background-color: $jss_paper;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: $animate_all_200;
+  width: 0vw;
+  z-index: 1;
+  &.active {
+    width: 100vw;
+  }
+  .wrapper {
+    width: 100vw;
+    .nav_links {
+      margin-top: 6rem;
+      .nav_link {
+        color: $jss_ink;
+        text-decoration: underline;
+        transition: $animate_all_200;
+        display: block;
+        text-align: right;
+        &:hover {
+          color: $jss_blue;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+
+/* ========================================
+  FOOTER STYLES
+=========================================== */
+
+.global_footer {
+  padding: 3rem 0;
+}
+
+
+/* ========================================
+  HERO ROW STYLES
+=========================================== */
+
+.hero_row {
+  color: #fff;
+  background-position: 50% 50%;
+  background-size: cover;
+  .hero_wrapper {
+    align-items: center;
+    background-color: #0008;
+    display: flex;
+    min-height: 20vh;
+    .hero_content {
+      padding: 4rem 0;
+      .cta_wrapper {
+        .cta {
+          color: #fff;
+          border: 1px solid #fff;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
+
+
+/* ========================================
+  CONTENT BLOCK STYLES
+=========================================== */
+
+.block_content {
+  .cta_wrapper {
+    .cta {
+      color: $jss_ink;
+      border: 1px solid $jss_ink;
+      border-radius: 0;
+      transition: $animate_all_200;
+      &:hover {
+        background-color: $jss_ink;
+        color: $jss_paper;
+      }
+    }
+  }
+
+}
+
+// GRID OF IMAGES
+
+.grid_of_images {
+  .image_title {
+    white-space: pre-wrap;
+  }
+}
 
 
 /* ===================================================================================
