@@ -8,7 +8,7 @@ const BlockContent = ({
   blockData,
 }) => {
   return (
-  <div className="block_content row d-flex align-items-center mb-5">
+  <div className="block_content row d-flex align-items-center py-5">
     <div className={`col-12${blockData.has_image ? ' col-md-6' : ''}`}>
       {blockData.block_title && <h2 className="section_title">{blockData.block_title}</h2>}
       {blockData.block_copy &&

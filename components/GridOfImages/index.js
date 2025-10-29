@@ -6,7 +6,7 @@ const GridOfImages = ({
   blockData,
 }) => {
   return (
-  <div className="grid_of_images row d-flex align-items-center mb-5">
+  <div className="grid_of_images row d-flex align-items-center py-5">
     <div className="col-12">
       {blockData.grid_title && <h2 className="section_title">{blockData.grid_title}</h2>}
     </div>

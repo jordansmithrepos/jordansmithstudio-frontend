@@ -5,7 +5,8 @@ import Link from "next/link";
 // import Image from "next/image";
 import {
   BlockContent,
-  BlockImage
+  BlockImage,
+  SocialFeed,
 } from '@/components';
 // import { Courier_Prime } from "next/font/google";
 
@@ -82,7 +83,14 @@ export default function HomePage({pageData}:HomeProps) {
             </div>
           </section>
           <section className="social_row">
-            <div className="container">[IG FEED GOES HERE?]</div>
+            <div className="container">
+              <SocialFeed
+                feedCopy={null}
+                feedID={305725}
+                feedTitle={null}
+                socialHandle="jordansmithstudio"
+              />
+            </div>
           </section>
         </main>
       </>}

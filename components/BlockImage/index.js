@@ -6,7 +6,7 @@ const BlockImage = ({
   blockData,
 }) => {
   return (
-  <div className="block_image row d-flex align-items-center mb-5">
+  <div className="block_image row d-flex align-items-center py-5">
     <div className={`col-12`}>
       <Image
         src={returnImageURL(blockData.block_image)}

@@ -4,6 +4,7 @@ import Footer from './Footer';
 import GridOfImages from './GridOfImages';
 import Header from './Header';
 import Layout from './Layout';
+import SocialFeed from './SocialFeed';
 
 export {
   BlockContent,
@@ -12,4 +13,5 @@ export {
   GridOfImages,
   Header,
   Layout,
+  SocialFeed,
 };

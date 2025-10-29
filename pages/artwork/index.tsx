@@ -6,6 +6,7 @@ import {
   BlockContent,
   BlockImage,
   GridOfImages,
+  SocialFeed,
 } from '@/components';
 
 export async function getStaticProps() {
@@ -83,6 +84,17 @@ export default function ArtworkPage({pageData}:ArtworkProps) {
                   );
                 }
               })}
+            </div>
+          </section>
+
+          <section className="social_row">
+            <div className="container">
+              <SocialFeed
+                feedID={305725}
+                socialHandle="jordansmithstudio"
+                feedTitle={null}
+                feedCopy={null}
+              />
             </div>
           </section>
         </main>
