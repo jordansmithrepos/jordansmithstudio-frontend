@@ -9,10 +9,10 @@ const BlockContent = ({
 }) => {
   return (
   <div className="block_content row d-flex align-items-center py-5">
-    <div className={`col-12${blockData.has_image ? ' col-md-6' : ''}`}>
+    <div className={`col-12${blockData.has_image ? ' col-md-6 mb-5 mb-md-0' : ''}`}>
       {blockData.block_title && <h2 className="section_title">{blockData.block_title}</h2>}
       {blockData.block_copy &&
-        <PortableText value={blockData.block_copy[0]} />
+        <PortableText value={blockData.block_copy} />
       }
       {blockData.has_cta &&
         <div className="cta_wrapper">

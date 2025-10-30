@@ -67,7 +67,7 @@ const Header = ({
           <div className="container">
             <div className="nav_links">
               {mobileNavState && headerData?.nav_links && headerData.nav_links.map( ( item, i ) => (
-                <Link key={i} href={item.url} className="nav_link btn">{item.text}</Link>
+                <Link key={i} href={item.url} className="nav_link btn" onClick={() => setMobileNavState(false)}>{item.text}</Link>
               ))}
             </div>
           </div>
