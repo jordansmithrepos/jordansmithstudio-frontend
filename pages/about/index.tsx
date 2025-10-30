@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { client } from '@/lib/sanityHelpers';
-import { returnImageURL } from '@/lib/helpers';
-import Link from "next/link";
+// import { returnImageURL } from '@/lib/helpers';
+// import Link from "next/link";
 import {
   BlockContent,
   BlockImage,
   GridOfImages,
+  HeroRow,
 } from '@/components';
 
 export async function getStaticProps() {
@@ -49,20 +50,7 @@ export default function AboutPage({pageData}:AboutProps) {
       <>
         <main className="page_content about">
           {pageData.hero &&
-            <section className="hero_row" style={{backgroundImage: 'url(' + returnImageURL(pageData.hero.image) + ')'}}>
-              <div className="hero_wrapper">
-                <div className="container">
-                  <div className="hero_content">
-                    <h1>{pageData.hero.title ?? 'Welcome!'}</h1>
-                    {pageData.hero.has_button &&
-                    <div className="cta_wrapper">
-                      <Link href={pageData.hero.cta.url} target={pageData.hero.cta.new_window ? '_blank' : ''} className="cta btn">{pageData.hero.cta.text}</Link>
-                    </div>
-                    }
-                  </div>
-                </div>
-              </div>
-            </section>
+            <HeroRow rowData={pageData.hero} />
           }
           <section className="content_row">
             <div className="container">
