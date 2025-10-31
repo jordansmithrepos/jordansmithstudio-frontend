@@ -19,6 +19,8 @@ export async function getStaticProps() {
     page_title,
     hero,
     sections,
+    layered_image,
+    image_layers,
   }`
   const queryHeader =
   `*[_type == "header"][0]{

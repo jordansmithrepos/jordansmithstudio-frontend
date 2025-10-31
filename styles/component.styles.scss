@@ -109,6 +109,7 @@ $jss_yellow: #fc0;
   CONTENT BLOCK STYLES
 =========================================== */
 
+
 .block_content {
   .cta_wrapper {
     .cta {
@@ -122,10 +123,133 @@ $jss_yellow: #fc0;
       }
     }
   }
-
+  .image_wrapper {
+    position: relative;
+    overflow: hidden;
+    .layered_images {
+      background-color: #000;
+      height: calc(100% + 20px);
+      left: 50%;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 50%;
+      transition: $animate_all_200;
+      translate: -50% -50%;
+      width: calc(100% + 20px);
+      cursor: crosshair;
+      .image_layer {
+        mix-blend-mode: screen;
+        position: absolute;
+        transition: $animate_all_200;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+      }
+      &:hover {
+        opacity: 1;
+        .image_layer {
+          &.layer-0 {
+            animation-duration: 3000ms;
+            animation-iteration-count: infinite;
+            animation-name: layered_image_shifter-0;
+            animation-timing-function: linear;
+            top: 0;
+            left: -10px;
+          }
+          &.layer-1 {
+            animation-duration: 2000ms;
+            animation-iteration-count: infinite;
+            animation-name: layered_image_shifter-1;
+            animation-timing-function: linear;
+            top: 0;
+            left: 10px;
+          }
+          &.layer-2 {
+            animation-duration: 4000ms;
+            animation-iteration-count: infinite;
+            animation-name: layered_image_shifter-1;
+            animation-timing-function: linear;
+            left: 0;
+            top: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes layered_image_shifter-0 {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: 2px;
+  }
+  50% {
+    top: 2px;
+    left: 10px;
+  }
+  75% {
+    top: 0;
+    left: -2px;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+@keyframes layered_image_shifter-1 {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 2px;
+    left: -2px;
+  }
+  50% {
+    top: 10px;
+    left: 2px;
+  }
+  75% {
+    top: -2px;
+    left: -2px;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+@keyframes layered_image_shifter-2 {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: -2px;
+    left: 0px;
+  }
+  50% {
+    top: 2px;
+    left: 2px;
+  }
+  75% {
+    top: -10px;
+    left: -2px;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
 }
 
-// GRID OF IMAGES
+
+/* ========================================
+  IMAGE GRID STYLES
+=========================================== */
 
 .grid_of_images {
   .image_title {

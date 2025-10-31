@@ -7,6 +7,7 @@ import { returnImageURL } from '../../lib/helpers';
 const BlockContent = ({
   blockData,
 }) => {
+  console.log( '--> jds BlockContent:', blockData.layered_image, blockData.image_layers );
   return (
   <div className="block_content row d-flex align-items-center py-5">
     <div className={`col-12${blockData.has_image ? ' col-md-6 mb-5 mb-md-0' : ''}`}>
@@ -28,13 +29,30 @@ const BlockContent = ({
     </div>
     {blockData.block_image &&
     <div className={`col-12${blockData.has_image ? ' col-md-6' : ''}`}>
-      <Image
-        src={returnImageURL(blockData.block_image)}
-        height={600}
-        width={600}
-        alt={blockData.alt_text ? blockData.alt_text : ''}
-        className="w-100 h-auto"
-      />
+      <div className="image_wrapper">
+        <Image
+          src={returnImageURL(blockData.block_image)}
+          height={600}
+          width={600}
+          alt={blockData.alt_text ? blockData.alt_text : ''}
+          className="w-100 h-auto position-relative"
+        />
+        {blockData.layered_image &&
+        <div className="layered_images">
+          {blockData.image_layers && blockData.image_layers.map( (image, i) => {
+            return (
+              <Image
+                src={returnImageURL(image)}
+                height={600}
+                width={600}
+                alt=""
+                className={`image_layer layer-${i} w-100 h-auto`}
+                key={i}
+              />
+            );
+          })}
+        </div>}
+      </div>
     </div>}
   </div>
   );
