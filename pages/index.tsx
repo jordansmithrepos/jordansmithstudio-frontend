@@ -5,7 +5,6 @@ import {
   BlockImage,
   HeroRow,
 } from '@/components';
-// import { Courier_Prime } from "next/font/google";
 
 export async function getStaticProps() {
   const query =
@@ -47,29 +46,28 @@ export default function HomePage({pageData}:HomeProps) {
 
   return (
     <>{pageData &&
-      <>
-        <main className="page_content home">
-          {pageData.hero &&
-            <HeroRow rowData={pageData.hero} />
-          }
-          <section className="content_row">
-            <div className="container">
-              {pageData.sections && pageData.sections.map((section:any, i:number) => {
-                if (section._type === 'contentBlock') {
-                  return (
-                    <BlockContent blockData={section} key={i} />
-                  );
-                }
-                if (section._type === 'imageBlock') {
-                  return(
-                    <BlockImage blockData={section} key={i} />
-                  );
-                }
-              })}
-            </div>
-          </section>
-        </main>
-      </>}
+      <main className="page_content home">
+        {pageData.hero &&
+          <HeroRow rowData={pageData.hero} />
+        }
+        <section className="content_row">
+          <div className="container">
+            {pageData.sections && pageData.sections.map((section:any, i:number) => {
+              if (section._type === 'contentBlock') {
+                return (
+                  <BlockContent blockData={section} key={i} />
+                );
+              }
+              if (section._type === 'imageBlock') {
+                return(
+                  <BlockImage blockData={section} key={i} />
+                );
+              }
+            })}
+          </div>
+        </section>
+      </main>
+      }
     </>
   );
 }
