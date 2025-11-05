@@ -148,10 +148,10 @@ $jss_yellow: #fc0;
         left: 0;
       }
       &:hover {
-        opacity: 1;
+        opacity: .9;
         .image_layer {
           &.layer-0 {
-            animation-duration: 3000ms;
+            animation-duration: 1200ms;
             animation-iteration-count: infinite;
             animation-name: layered_image_shifter-0;
             animation-timing-function: linear;
@@ -159,7 +159,7 @@ $jss_yellow: #fc0;
             left: -10px;
           }
           &.layer-1 {
-            animation-duration: 2000ms;
+            animation-duration: 1400ms;
             animation-iteration-count: infinite;
             animation-name: layered_image_shifter-1;
             animation-timing-function: linear;
@@ -167,7 +167,7 @@ $jss_yellow: #fc0;
             left: 10px;
           }
           &.layer-2 {
-            animation-duration: 4000ms;
+            animation-duration: 1600ms;
             animation-iteration-count: infinite;
             animation-name: layered_image_shifter-1;
             animation-timing-function: linear;
@@ -181,68 +181,68 @@ $jss_yellow: #fc0;
 }
 @keyframes layered_image_shifter-0 {
   0% {
-    top: 0;
     left: 0;
+    top: 0;
   }
   25% {
-    top: 0;
     left: 2px;
+    top: 2;
   }
   50% {
-    top: 2px;
-    left: 10px;
+    left: 0px;
+    top: 1px;
   }
   75% {
-    top: 0;
     left: -2px;
+    top: 0;
   }
   100% {
-    top: 0;
     left: 0;
+    top: 0;
   }
 }
 @keyframes layered_image_shifter-1 {
   0% {
-    top: 0;
     left: 0;
+    top: 0;
   }
   25% {
-    top: 2px;
-    left: -2px;
+    left: 4px;
+    top: 2;
   }
   50% {
-    top: 10px;
-    left: 2px;
+    left: 0px;
+    top: -1px;
   }
   75% {
-    top: -2px;
-    left: -2px;
+    left: -4px;
+    top: 0;
   }
   100% {
-    top: 0;
     left: 0;
+    top: 0;
   }
 }
 @keyframes layered_image_shifter-2 {
   0% {
-    top: 0;
     left: 0;
+    top: 0;
   }
   25% {
-    top: -2px;
-    left: 0px;
+    left: 6px;
+    top: 2;
   }
   50% {
-    top: 2px;
-    left: 2px;
+    left: 0px;
+    top: 0;
   }
   75% {
-    top: -10px;
-    left: -2px;
+    left: -6px;
+    top: 0;
   }
   100% {
-    top: 0;
     left: 0;
+    top: 0;
   }
 }
 
