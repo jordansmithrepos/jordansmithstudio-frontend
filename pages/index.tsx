@@ -1,13 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { client } from '@/lib/sanityHelpers';
-// import { returnImageURL } from '@/lib/helpers';
-// import Link from "next/link";
-// import Image from "next/image";
 import {
   BlockContent,
   BlockImage,
   HeroRow,
-  SocialFeed,
 } from '@/components';
 // import { Courier_Prime } from "next/font/google";
 
@@ -70,16 +66,6 @@ export default function HomePage({pageData}:HomeProps) {
                   );
                 }
               })}
-            </div>
-          </section>
-          <section className="social_row">
-            <div className="container">
-              <SocialFeed
-                feedCopy={null}
-                feedID={305725}
-                feedTitle={null}
-                socialHandle="jordansmithstudio"
-              />
             </div>
           </section>
         </main>
