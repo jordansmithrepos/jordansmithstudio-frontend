@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { client } from '@/lib/sanityHelpers';
-// import { returnImageURL } from '@/lib/helpers';
-// import Link from "next/link";
 import {
   BlockContent,
   BlockImage,

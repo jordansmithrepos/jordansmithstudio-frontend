@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Script from "next/script";
 import PropTypes from 'prop-types';
-import { PortableText } from '@portabletext/react';
+import { RenderCopy } from '@/components';
+
 
 const SocialFeed = ({
   feedTitle,
@@ -19,7 +20,7 @@ const SocialFeed = ({
           </Link>
         </h5>
       </div>
-      {feedCopy && <div className="feed_copy">{<PortableText value={feedCopy} />}</div>}
+      {feedCopy && <div className="feed_copy">{<RenderCopy copyData={feedCopy} />}</div>}
       <div className="feed_wrapper">
         <div
           className="taggbox"

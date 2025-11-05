@@ -6,6 +6,7 @@ import Header from './Header';
 import HeroRow from './HeroRow';
 import Layout from './Layout';
 import SocialFeed from './SocialFeed';
+import RenderCopy from './RenderCopy';
 
 export {
   BlockContent,
@@ -16,4 +17,5 @@ export {
   HeroRow,
   Layout,
   SocialFeed,
+  RenderCopy,
 };

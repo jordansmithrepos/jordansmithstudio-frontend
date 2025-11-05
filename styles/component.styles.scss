@@ -95,9 +95,14 @@ $jss_yellow: #fc0;
       padding: 4rem 0;
       .cta_wrapper {
         .cta {
-          color: #fff;
-          border: 1px solid #fff;
           border-radius: 0;
+          border: 1px solid $jss_paper;
+          color: $jss_paper;
+          transition: $animate_all_200;
+          &:hover {
+            background-color: $jss_paper;
+            color: $jss_ink;
+          }
         }
       }
     }
