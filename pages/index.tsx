@@ -13,9 +13,90 @@ export async function getStaticProps() {
     page_slug,
     page_title,
     hero,
-    sections,
-    layered_image,
-    image_layers,
+    sections[]{
+      _type == "imageBlock" => {
+        _type,
+        block_image{
+          _type,
+          asset->{
+            url,
+            _type,
+            altText,
+            description,
+            title,
+            metadata{
+              dimensions{
+                height,
+                width
+              }
+            }
+          }
+        },
+        layered_image,
+        image_layers[]{
+          _key,
+          _type,
+          asset->{
+            _ref,
+            _type,
+            url,
+            altText,
+            description,
+            title,
+            metadata{
+              dimensions{
+                height,
+                width
+              }
+            }
+          }
+        }
+      },
+      _type != "imageBlock" => {
+        _key,
+        _type,
+        block_copy,
+        block_title,
+        block_image{
+          _type,
+          asset->{
+            url,
+            _type,
+            altText,
+            description,
+            title,
+            metadata{
+              dimensions{
+                height,
+                width
+              }
+            }
+          }
+        },
+        cta,
+        has_cta,
+        has_image,
+        layered_image,
+        image_layers[]{
+          _key,
+          _type,
+          asset->{
+            _ref,
+            _type,
+            url,
+            altText,
+            description,
+            title,
+            metadata{
+              dimensions{
+                height,
+                width
+              }
+            }
+          }
+        }
+      }
+    },
   }`
   const queryHeader =
   `*[_type == "header"][0]{
@@ -43,7 +124,6 @@ interface HomeProps {
 }
 
 export default function HomePage({pageData}:HomeProps) {
-
   return (
     <>{pageData &&
       <main className="page_content home">
