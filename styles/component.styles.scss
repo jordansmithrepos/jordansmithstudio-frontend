@@ -128,58 +128,65 @@ $jss_yellow: #fc0;
       }
     }
   }
-  .image_wrapper {
-    position: relative;
+}
+
+
+/* ========================================
+  LAYERD IMAGE EFFECT
+=========================================== */
+
+.image_wrapper.has_layers {
+  cursor: crosshair;
+  overflow: hidden;
+  position: relative;
+  .layered_images {
+    background-color: #000;
+    height: calc(100% + 0px);
+    left: 50%;
+    opacity: 0;
     overflow: hidden;
-    .layered_images {
-      background-color: #000;
-      height: calc(100% + 20px);
-      left: 50%;
-      opacity: 0;
-      overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transition: $animate_all_200;
+    translate: -50% -50%;
+    width: calc(100% + 0px);
+    .image_layer {
+      height: 100%;
+      left: 0;
+      mix-blend-mode: screen;
       position: absolute;
-      top: 50%;
+      top: 0;
       transition: $animate_all_200;
-      translate: -50% -50%;
-      width: calc(100% + 20px);
-      cursor: crosshair;
-      .image_layer {
-        mix-blend-mode: screen;
-        position: absolute;
-        transition: $animate_all_200;
-        height: 100%;
-        width: 100%;
+      width: 100%;
+    }
+  }
+  &:hover .layered_images {
+    opacity: .9;
+    .image_layer {
+      &.layer-0 {
+        animation-duration: 1200ms;
+        animation-iteration-count: infinite;
+        animation-name: layered_image_shifter-0;
+        animation-timing-function: linear;
         top: 0;
-        left: 0;
+        left: -10px;
       }
-      &:hover {
-        opacity: .9;
-        .image_layer {
-          &.layer-0 {
-            animation-duration: 1200ms;
-            animation-iteration-count: infinite;
-            animation-name: layered_image_shifter-0;
-            animation-timing-function: linear;
-            top: 0;
-            left: -10px;
-          }
-          &.layer-1 {
-            animation-duration: 1400ms;
-            animation-iteration-count: infinite;
-            animation-name: layered_image_shifter-1;
-            animation-timing-function: linear;
-            top: 0;
-            left: 10px;
-          }
-          &.layer-2 {
-            animation-duration: 1600ms;
-            animation-iteration-count: infinite;
-            animation-name: layered_image_shifter-1;
-            animation-timing-function: linear;
-            left: 0;
-            top: 0px;
-          }
-        }
+      &.layer-1 {
+        animation-duration: 1400ms;
+        animation-iteration-count: infinite;
+        animation-name: layered_image_shifter-1;
+        animation-timing-function: linear;
+        top: 0;
+        left: 10px;
+      }
+      &.layer-2 {
+        animation-duration: 1600ms;
+        animation-iteration-count: infinite;
+        animation-name: layered_image_shifter-1;
+        animation-timing-function: linear;
+        left: 0;
+        top: 0px;
       }
     }
   }
