@@ -16,6 +16,7 @@ export async function getStaticProps() {
     hero,
     sections[]{
       _type == "imageBlock" => {
+        _key,
         _type,
         block_image{
           _type,
@@ -53,7 +54,14 @@ export async function getStaticProps() {
           }
         }
       },
-      _type != "imageBlock" => {
+      _type == "imageGrid" => {
+        _key,
+        _type,
+        grid_copy,
+        grid_title,
+        image_grid,
+      },
+      _type != "imageBlock" && _type != "imageGrid" => {
         _key,
         _type,
         block_copy,
