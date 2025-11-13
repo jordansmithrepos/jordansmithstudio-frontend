@@ -4,7 +4,7 @@ import {
   BlockContent,
   BlockImage,
   GridOfImages,
-  HeroRow,
+  HeroRowBig,
 } from '@/components';
 
 export async function getStaticProps() {
@@ -138,7 +138,7 @@ export default function AboutPage({pageData}:AboutProps) {
       <>
         <main className="page_content about">
           {pageData.hero &&
-            <HeroRow rowData={pageData.hero} />
+            <HeroRowBig rowData={pageData.hero} />
           }
           <section className="content_row">
             <div className="container">

@@ -36,7 +36,8 @@ $jss_yellow: #fc0;
       }
     }
   }
-  &.home {
+  &.home,
+  &.about {
     position: absolute;
     .home_link {
       color: $jss_paper;
@@ -127,9 +128,10 @@ $jss_yellow: #fc0;
 =========================================== */
 
 .hero_row_big {
-  color: #fff;
+  background-attachment: fixed;
   background-position: 50% 50%;
   background-size: cover;
+  color: #fff;
   .hero_wrapper {
     align-items: flex-end;
     background-color: #000a;
