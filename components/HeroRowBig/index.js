@@ -7,7 +7,8 @@ const HeroRow = ({
   rowData,
 }) => {
   return (
-    <section className="hero_row_big" style={{backgroundImage: 'url(' + returnImageURL(rowData.image) + ')'}}>
+    <section className="hero_row_big">
+      <div className="bg_img_container" style={{backgroundImage: 'url(' + returnImageURL(rowData.image) + ')'}} />
       <div className="hero_wrapper">
         <div className="container">
           <div className="hero_content">
