@@ -58,7 +58,7 @@ a {
 
 
 /* ========================================
-  GLOBAL FLAVOR
+  GLOBAL FLAVORS
 =========================================== */
 
 .label_maker {
@@ -72,8 +72,12 @@ a {
 
 .art_frame {
   background-color: $jss_paper;
-  border: 1px solid $jss_ink;
   padding: 1em;
+  transition: $animate_all_200;
+  border: 1px dotted #0000;
+  &:hover {
+    border-color: $jss_yellow $jss_red $jss_ink $jss_blue;
+  }
 }
 
 
