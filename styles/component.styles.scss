@@ -46,6 +46,12 @@ $jss_yellow: #fc0;
       .nav_link {
         color: $jss_paper;
       }
+      .mobile_nav_toggle {
+        color: $jss_paper;
+        &.active {
+          color: $jss_ink;
+        }
+      }
     }
   }
 }
@@ -58,7 +64,7 @@ $jss_yellow: #fc0;
   top: 0;
   transition: $animate_all_200;
   width: 0vw;
-  z-index: 1;
+  z-index: 2;
   &.active {
     width: 100vw;
   }
@@ -128,15 +134,27 @@ $jss_yellow: #fc0;
 =========================================== */
 
 .hero_row_big {
-  background-attachment: fixed;
-  background-position: 50% 50%;
-  background-size: cover;
   color: #fff;
+  .bg_img_container {
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-size: cover;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
   .hero_wrapper {
     align-items: flex-end;
     background-color: #000a;
     display: flex;
     min-height: 100vh;
+    position: relative;
+    z-index: 1;
     .hero_content {
       padding: 4rem 0;
       .hero_copy {

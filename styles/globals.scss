@@ -62,11 +62,10 @@ a {
 =========================================== */
 
 .label_maker {
-  background-color: $jss_ink;
+  background-color: $jss_ink !important;
   box-shadow: 0 2px 4px #0003, inset 1px 1px 1px #fff1, inset 1px 1px 1px #0001;
-  color: $jss_paper;
+  color: $jss_paper !important;
   display: inline-block;
-  // margin: -.25em -.5em .25em;
   margin: 0 0 .5em;
   padding: .25em .5em;
 }
