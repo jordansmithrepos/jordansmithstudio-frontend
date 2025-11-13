@@ -11,20 +11,20 @@ const GridOfImages = ({
       {blockData.grid_title && <h2 className="section_title label_maker">{blockData.grid_title}</h2>}
     </div>
     <div className="col-12">
-      <div className="row g-5">
+      <div className="row g-1">
         {blockData.image_grid && blockData.image_grid.map((item, i) => {
           return (
             <div className="col-12 col-md-6 col-lg-4" key={i}>
-              <div className="image_wrapper">
+              <div className="image_wrapper art_frame">
                 <Image
                   src={returnImageURL(item)}
                   height={600}
                   width={600}
                   alt={item.alt_text ? item.alt_text : ''}
-                  className="image art_frame w-100 h-auto"
+                  className="image w-100 h-auto"
                 />
+                {item.title && <div className="image_title">{item.title}</div>}
               </div>
-              {item.title && <div className="image_title">{item.title}</div>}
             </div>
           );
         })}

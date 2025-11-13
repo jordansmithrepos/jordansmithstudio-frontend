@@ -115,6 +115,15 @@ $jss_yellow: #fc0;
     .hero_content {
       border-bottom: 1px dotted $jss_ink;
       padding: 4rem 0;
+      .page_title {
+        font-size: 3em;
+      }
+      .hero_copy {
+        p {
+          font-size: 1.5em;
+          margin: 0;
+        }
+      }
       .cta_wrapper {
         margin-top: 1em;
         .cta {
@@ -163,8 +172,12 @@ $jss_yellow: #fc0;
     z-index: 1;
     .hero_content {
       padding: 4rem 0;
+      .page_title {
+        font-size: 3em;
+      }
       .hero_copy {
         p {
+          font-size: 1.5em;
           margin: 0;
         }
       }
@@ -340,8 +353,11 @@ $jss_yellow: #fc0;
 =========================================== */
 
 .grid_of_images {
-  .image_title {
-    white-space: pre-wrap;
+  .image_wrapper {
+    .image_title {
+      margin-top: 1em;
+      white-space: pre-wrap;
+    }
   }
 }
 
