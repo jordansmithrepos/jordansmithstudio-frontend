@@ -1,4 +1,5 @@
 import { Layout } from '../components';
+import { ParallaxProvider } from 'react-scroll-parallax';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.scss';
 import '../styles/component.styles.scss';
@@ -39,13 +40,15 @@ export default function App({ Component, pageProps }: AppProps) {
   'color: #fc0',
   );
   return (
-    <Layout
-      headerPageTitle={ pageProps.pageData?.page_title }
-      headerMetaDesc={ pageProps.pageData?.meta_description }
-      footerData={ pageProps.footerData }
-      headerData={ pageProps.headerData }
-    >
-      <Component {...pageProps} />
-    </Layout>
+    <ParallaxProvider>
+      <Layout
+        headerPageTitle={ pageProps.pageData?.page_title }
+        headerMetaDesc={ pageProps.pageData?.meta_description }
+        footerData={ pageProps.footerData }
+        headerData={ pageProps.headerData }
+      >
+        <Component {...pageProps} />
+      </Layout>
+    </ParallaxProvider>
   );
 }

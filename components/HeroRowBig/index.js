@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PropTypes from 'prop-types';
+import { Parallax } from "react-scroll-parallax";
 import { returnImageURL } from '../../lib/helpers';
 import { RenderCopy } from '@/components';
 
@@ -8,7 +9,13 @@ const HeroRow = ({
 }) => {
   return (
     <section className="hero_row_big">
-      <div className="bg_img_container" style={{backgroundImage: 'url(' + returnImageURL(rowData.image) + ')'}} />
+      <Parallax
+        shouldAlwaysCompleteAnimation={ true }
+        translateY={[ '0vh', '100vh' ]}
+        scale={[1,1.25]}
+      >
+        <div className="bg_img_container" style={{backgroundImage: 'url(' + returnImageURL(rowData.image) + ')'}} />
+      </Parallax>
       <div className="hero_wrapper">
         <div className="container">
           <div className="hero_content">

@@ -51,7 +51,7 @@ const Header = ({
           <div className="d-flex align-items-center justify-content-between py-3">
             <div className="get_yourself_home">
               {headerData?.home_link &&
-              <Link href={headerData.home_link.url} className={`home_link${ mobileNavState ? ' label_maker' : '' }`}>{headerData.home_link.text}</Link>
+              <Link href={headerData.home_link.url} className={`home_link${ mobileNavState ? ' label_maker' : '' }`} onClick={() => setMobileNavState(false)}>{headerData.home_link.text}</Link>
               }
             </div>
             <div className="nav_links d-none d-md-flex">
