@@ -3,7 +3,7 @@ import { client } from '@/lib/sanityHelpers';
 import {
   BlockContent,
   BlockImage,
-  HeroRow,
+  HeroRowBig,
 } from '@/components';
 
 export async function getStaticProps() {
@@ -135,7 +135,7 @@ export default function HomePage({pageData}:HomeProps) {
     <>{pageData &&
       <main className="page_content home">
         {pageData.hero &&
-          <HeroRow rowData={pageData.hero} />
+          <HeroRowBig rowData={pageData.hero} />
         }
         <section className="content_row">
           <div className="container">

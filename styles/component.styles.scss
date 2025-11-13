@@ -13,8 +13,8 @@ $jss_yellow: #fc0;
 
 .global_header {
   position: relative;
-  z-index: 2;
-  box-shadow: 0 0 4px #2222;
+  width: 100%;
+  z-index: 4;
   .home_link {
     color: $jss_ink;
     font-weight: bold;
@@ -27,11 +27,23 @@ $jss_yellow: #fc0;
   .nav_links {
     .nav_link {
       color: $jss_ink;
-      text-decoration: underline;
+      text-decoration: none;
       transition: $animate_all_200;
+      border-radius: 0;
       &:hover {
         color: $jss_blue;
-        text-decoration: none;
+        text-decoration: underline;
+      }
+    }
+  }
+  &.home {
+    position: absolute;
+    .home_link {
+      color: $jss_paper;
+    }
+    .nav_links {
+      .nav_link {
+        color: $jss_paper;
       }
     }
   }
@@ -83,25 +95,63 @@ $jss_yellow: #fc0;
 =========================================== */
 
 .hero_row {
+  background-position: 50% 50%;
+  background-size: cover;
+  color: $jss_ink;
+  .hero_wrapper {
+    align-items: center;
+    display: flex;
+    .hero_content {
+      border-bottom: 1px dotted $jss_ink;
+      padding: 4rem 0;
+      .cta_wrapper {
+        margin-top: 1em;
+        .cta {
+          border-radius: 0;
+          border: 1px solid $jss_ink;
+          color: $jss_ink;
+          transition: $animate_all_200;
+          &:hover {
+            background-color: $jss_ink;
+            color: $jss_paper;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* ========================================
+  HERO ROW BIG STYLES
+=========================================== */
+
+.hero_row_big {
   color: #fff;
   background-position: 50% 50%;
   background-size: cover;
   .hero_wrapper {
-    align-items: center;
-    background-color: #0008;
+    align-items: flex-end;
+    background-color: #000a;
     display: flex;
-    min-height: 20vh;
+    min-height: 100vh;
     .hero_content {
       padding: 4rem 0;
+      .hero_copy {
+        p {
+          margin: 0;
+        }
+      }
       .cta_wrapper {
+        margin-top: 1em;
         .cta {
+          background-color: $jss_paper;
           border-radius: 0;
-          border: 1px solid $jss_paper;
-          color: $jss_paper;
+          color: $jss_ink;
           transition: $animate_all_200;
           &:hover {
-            background-color: $jss_paper;
-            color: $jss_ink;
+            background-color: $jss_ink;
+            color: $jss_paper;
           }
         }
       }
