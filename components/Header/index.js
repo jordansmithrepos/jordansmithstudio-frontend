@@ -2,12 +2,15 @@ import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
 
 const Header = ({
   headerData,
   headerMetaDesc,
   headerPageTitle,
 }) => {
+  const router = useRouter();
+  const thePageSlug = router.pathname.slice(1).toLowerCase();
 
   const [ mobileNavState, setMobileNavState ] = useState( false );
   const toggleMobileNav = () => {
@@ -20,6 +23,7 @@ const Header = ({
     };
     window.addEventListener( 'resize', handleResize );
   },[ setMobileNavState ]);
+
 
   return (
     <>
@@ -42,7 +46,7 @@ const Header = ({
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-      <nav className="global_header">
+      <nav className={`global_header${thePageSlug ? ' ' + thePageSlug : ' home'}`}>
         <div className="container">
           <div className="d-flex align-items-center justify-content-between py-3">
             <div className="get_yourself_home">

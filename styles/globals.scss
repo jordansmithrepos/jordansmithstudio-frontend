@@ -56,8 +56,25 @@ a {
   }
 }
 
-.content_row {
-  padding: 3rem 0 0;
+
+/* ========================================
+  GLOBAL FLAVOR
+=========================================== */
+
+.label_maker {
+  background-color: $jss_ink;
+  box-shadow: 0 2px 4px #0003, inset 1px 1px 1px #fff1, inset 1px 1px 1px #0001;
+  color: $jss_paper;
+  display: inline-block;
+  // margin: -.25em -.5em .25em;
+  margin: 0 0 .5em;
+  padding: .25em .5em;
+}
+
+.art_frame {
+  background-color: $jss_paper;
+  border: 1px solid $jss_ink;
+  padding: 1em;
 }
 
 

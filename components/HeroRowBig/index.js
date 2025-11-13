@@ -1,16 +1,17 @@
 import Link from "next/link";
 import PropTypes from 'prop-types';
+import { returnImageURL } from '../../lib/helpers';
 import { RenderCopy } from '@/components';
 
 const HeroRow = ({
   rowData,
 }) => {
   return (
-    <section className="hero_row">
+    <section className="hero_row_big" style={{backgroundImage: 'url(' + returnImageURL(rowData.image) + ')'}}>
       <div className="hero_wrapper">
         <div className="container">
           <div className="hero_content">
-            <h1 className="page_title">{rowData.title ?? 'Hello!'}</h1>
+            <h1 className="page_title">{rowData.title ?? 'Welcome!'}</h1>
             {rowData.copy && <div className="hero_copy"><RenderCopy copyData={rowData.copy} /></div>}
             {rowData.has_button &&
             <div className="cta_wrapper">

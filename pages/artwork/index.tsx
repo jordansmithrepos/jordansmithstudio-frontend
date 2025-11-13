@@ -82,6 +82,25 @@ export async function getStaticProps() {
             }
           }
         },
+        layered_image,
+        image_layers[]{
+          _key,
+          _type,
+          asset->{
+            _ref,
+            _type,
+            url,
+            altText,
+            description,
+            title,
+            metadata{
+              dimensions{
+                height,
+                width
+              }
+            }
+          }
+        },
         cta,
         has_cta,
         has_image

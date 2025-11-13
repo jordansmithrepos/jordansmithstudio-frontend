@@ -8,7 +8,7 @@ const GridOfImages = ({
   return (
   <div className="grid_of_images row d-flex align-items-center py-5">
     <div className="col-12">
-      {blockData.grid_title && <h2 className="section_title">{blockData.grid_title}</h2>}
+      {blockData.grid_title && <h2 className="section_title label_maker">{blockData.grid_title}</h2>}
     </div>
     <div className="col-12">
       <div className="row g-5">
@@ -21,7 +21,7 @@ const GridOfImages = ({
                   height={600}
                   width={600}
                   alt={item.alt_text ? item.alt_text : ''}
-                  className="image w-100 h-auto mb-3"
+                  className="image art_frame w-100 h-auto mb-3"
                 />
               </div>
               {item.title && <div className="image_title">{item.title}</div>}
