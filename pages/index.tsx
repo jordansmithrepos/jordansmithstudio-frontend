@@ -10,6 +10,22 @@ export async function getStaticProps() {
   const query =
   `*[ page_slug.current == "home" ][0]{
     meta_description,
+    share_image{
+      _type,
+      asset->{
+        url,
+        _type,
+        altText,
+        description,
+        title,
+        metadata{
+          dimensions{
+            height,
+            width
+          }
+        }
+      }
+    },
     page_slug,
     page_title,
     hero,

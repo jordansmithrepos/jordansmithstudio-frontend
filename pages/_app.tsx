@@ -46,6 +46,7 @@ export default function App({ Component, pageProps }: AppProps) {
         headerMetaDesc={ pageProps.pageData?.meta_description }
         footerData={ pageProps.footerData }
         headerData={ pageProps.headerData }
+        headerShareImage={ pageProps.pageData?.share_image }
       >
         <Component {...pageProps} />
       </Layout>
