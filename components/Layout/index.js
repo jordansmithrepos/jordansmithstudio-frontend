@@ -9,6 +9,7 @@ const Layout = ({
   headerData,
   headerMetaDesc,
   headerPageTitle,
+  headerShareImage,
 }) => {
 
   return (
@@ -17,6 +18,7 @@ const Layout = ({
         headerData={headerData}
         headerMetaDesc={headerMetaDesc}
         headerPageTitle={headerPageTitle}
+        headerShareImage={headerShareImage}
       />
         {children}
       <Footer
@@ -31,6 +33,7 @@ Layout.propTypes = {
   headerData: PropTypes.any,
   headerMetaDesc: PropTypes.any,
   headerPageTitle: PropTypes.any,
+  headerShareImage: PropTypes.any,
 };
 
 export default Layout;

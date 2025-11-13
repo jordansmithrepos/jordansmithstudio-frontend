@@ -8,7 +8,9 @@ const Header = ({
   headerData,
   headerMetaDesc,
   headerPageTitle,
+  headerShareImage,
 }) => {
+  console.log( '--> jds HEADER:', headerMetaDesc );
   const router = useRouter();
   const thePageSlug = router.pathname.slice(1).toLowerCase();
 
@@ -32,9 +34,9 @@ const Header = ({
         <meta name="description" content={ headerMetaDesc ? headerMetaDesc : 'Jordan Smith Studio' } />
         <meta property="og:title" content={ headerPageTitle ? headerPageTitle : 'Jordan Smith Studio'} />
         <meta property="og:description" content={ headerMetaDesc ? headerMetaDesc : 'Jordan Smith Studio' } />
-        {/* <meta property="og:image" content={ headerContent?.share_image ? headerContent.share_image.url : process.env.API_URL + '/wp-content/uploads/2022/12/bhi-default_share_image.jpg' } /> */}
-        {/* <meta property="og:image:height" content={ headerContent?.share_image ? headerContent?.share_image.height :'1200' }/> */}
-        {/* <meta property="og:image:width" content={ headerContent?.share_image ? headerContent?.share_image.width :'630' }/> */}
+        {headerShareImage && <meta property="og:image" content={ headerShareImage.asset?.url } />}
+        {headerShareImage && <meta property="og:image:height" content={ headerShareImage.asset?.metadata?.dimensions?.width ? headerShareImage.asset.metadata.dimensions.width : '1200' }/>}
+        {headerShareImage && <meta property="og:image:width" content={ headerShareImage.asset?.metadata?.dimensions?.height ? headerShareImage.asset.metadata.dimensions.height : '630' }/>}
         {/* <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /> */}
         <link id="favicon" rel="shortcut icon" href={ '/jss_multiplied_favicon.png' } />
         <link rel="icon" type="image/png" sizes="32x32" href={ '/jss_multiplied_favicon.png' } />
@@ -86,6 +88,7 @@ Header.propTypes = {
   headerData: PropTypes.any,
   headerMetaDesc: PropTypes.any,
   headerPageTitle: PropTypes.any,
+  headerShareImage: PropTypes.any,
 };
 
 export default Header;
