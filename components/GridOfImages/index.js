@@ -21,7 +21,7 @@ const GridOfImages = ({
                   height={600}
                   width={600}
                   alt={item.alt_text ? item.alt_text : ''}
-                  className="image art_frame w-100 h-auto mb-3"
+                  className="image art_frame w-100 h-auto"
                 />
               </div>
               {item.title && <div className="image_title">{item.title}</div>}
