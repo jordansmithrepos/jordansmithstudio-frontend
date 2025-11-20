@@ -10,7 +10,6 @@ const Header = ({
   headerPageTitle,
   headerShareImage,
 }) => {
-  console.log( '--> jds HEADER:', headerMetaDesc );
   const router = useRouter();
   const thePageSlug = router.pathname.slice(1).toLowerCase();
 
