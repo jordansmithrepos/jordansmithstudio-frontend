@@ -1,5 +1,6 @@
 import Image from "next/image";
 import PropTypes from 'prop-types';
+import { RenderCopy } from '@/components';
 import { returnImageURL } from '../../lib/helpers';
 
 const GridOfImages = ({
@@ -9,6 +10,9 @@ const GridOfImages = ({
   <div className="grid_of_images row d-flex align-items-center py-5">
     <div className="col-12">
       {blockData.grid_title && <h2 className="section_title label_maker">{blockData.grid_title}</h2>}
+      {blockData.grid_copy &&
+        <RenderCopy copyData={blockData.grid_copy} />
+      }
     </div>
     <div className="col-12">
       <div className="row g-1">
