@@ -27,7 +27,7 @@ const GridOfImages = ({
                   alt={item.alt_text ? item.alt_text : ''}
                   className="image w-100 h-auto"
                 />
-                {item.title && <div className="image_title">{item.title}</div>}
+                {item.title && <div className="image_title"><RenderCopy copyData={item.title} /></div>}
               </div>
             </div>
           );
