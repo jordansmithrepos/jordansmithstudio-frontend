@@ -98,6 +98,10 @@ $jss_yellow: #fc0;
 
 .global_footer {
   padding: 3rem 0;
+  .container {
+    border-top: 1px dotted $jss_ink;
+    padding-top: 4rem;
+  }
 }
 
 
