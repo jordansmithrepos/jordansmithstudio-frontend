@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { client } from '@/lib/sanityHelpers';
+import { queryPage, queryHeader, queryFooter } from '@/lib/groqQueries';
 import {
   BlockContent,
   BlockImage,
@@ -9,131 +10,7 @@ import {
 } from '@/components';
 
 export async function getStaticProps() {
-  const query =
-  `*[ page_slug.current == "artwork" ][0]{
-    meta_description,
-    share_image{
-      _type,
-      asset->{
-        url,
-        _type,
-        altText,
-        description,
-        title,
-        metadata{
-          dimensions{
-            height,
-            width
-          }
-        }
-      }
-    },
-    page_slug,
-    page_title,
-    hero,
-    sections[]{
-      _type == "imageBlock" => {
-        _key,
-        _type,
-        block_image{
-          _type,
-          asset->{
-            url,
-            _type,
-            altText,
-            description,
-            title,
-            metadata{
-              dimensions{
-                height,
-                width
-              }
-            }
-          }
-        },
-        layered_image,
-        image_layers[]{
-          _key,
-          _type,
-          asset->{
-            _ref,
-            _type,
-            url,
-            altText,
-            description,
-            title,
-            metadata{
-              dimensions{
-                height,
-                width
-              }
-            }
-          }
-        }
-      },
-      _type == "imageGrid" => {
-        _key,
-        _type,
-        grid_copy,
-        grid_title,
-        image_grid,
-      },
-      _type != "imageBlock" && _type != "imageGrid" => {
-        _key,
-        _type,
-        block_copy,
-        block_title,
-        block_image{
-          _type,
-          asset->{
-            url,
-            _type,
-            altText,
-            description,
-            title,
-            metadata{
-              dimensions{
-                height,
-                width
-              }
-            }
-          }
-        },
-        layered_image,
-        image_layers[]{
-          _key,
-          _type,
-          asset->{
-            _ref,
-            _type,
-            url,
-            altText,
-            description,
-            title,
-            metadata{
-              dimensions{
-                height,
-                width
-              }
-            }
-          }
-        },
-        cta,
-        has_cta,
-        has_image
-      }
-    }
-  }`
-  const queryHeader =
-  `*[_type == "header"][0]{
-    home_link,
-    nav_links,
-  }`
-  const queryFooter =
-  `*[_type == "footer"][0]{
-    copyright_text,
-  }`
-  const pageData = await client.fetch(query)
+  const pageData = await client.fetch(queryPage, { slug: 'artwork' })
   const isHeroBig = await pageData.hero.image ? true : false
   const headerData = await client.fetch(queryHeader)
   const footerData = await client.fetch(queryFooter)
