@@ -5,6 +5,7 @@ import {
   BlockImage,
   GridOfImages,
   HeroRow,
+  HeroRowBig,
 } from '@/components';
 
 export async function getStaticProps() {
@@ -133,11 +134,13 @@ export async function getStaticProps() {
     copyright_text,
   }`
   const pageData = await client.fetch(query)
+  const isHeroBig = await pageData.hero.image ? true : false
   const headerData = await client.fetch(queryHeader)
   const footerData = await client.fetch(queryFooter)
   return {
     props: {
       pageData,
+      isHeroBig,
       footerData,
       headerData,
     },
@@ -146,15 +149,18 @@ export async function getStaticProps() {
 
 interface ArtworkProps {
   pageData: any,
+  isHeroBig: boolean,
 }
 
-export default function ArtworkPage({pageData}:ArtworkProps) {
+export default function ArtworkPage({pageData, isHeroBig}:ArtworkProps) {
 
   return (
     <>{pageData &&
       <>
         <main className="page_content artwork">
-          {pageData.hero &&
+          {pageData.hero && isHeroBig ?
+            <HeroRowBig rowData={pageData.hero} />
+          : pageData.hero && !isHeroBig &&
             <HeroRow rowData={pageData.hero} />
           }
           <section className="content_row">

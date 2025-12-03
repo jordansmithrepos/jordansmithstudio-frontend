@@ -10,6 +10,7 @@ const Layout = ({
   headerMetaDesc,
   headerPageTitle,
   headerShareImage,
+  isHeroBig,
 }) => {
 
   return (
@@ -19,6 +20,7 @@ const Layout = ({
         headerMetaDesc={headerMetaDesc}
         headerPageTitle={headerPageTitle}
         headerShareImage={headerShareImage}
+        isHeroBig={isHeroBig}
       />
         {children}
       <Footer
@@ -34,6 +36,7 @@ Layout.propTypes = {
   headerMetaDesc: PropTypes.any,
   headerPageTitle: PropTypes.any,
   headerShareImage: PropTypes.any,
+  isHeroBig: PropTypes.bool,
 };
 
 export default Layout;

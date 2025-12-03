@@ -4,7 +4,7 @@ import { Parallax } from "react-scroll-parallax";
 import { returnImageURL } from '../../lib/helpers';
 import { RenderCopy } from '@/components';
 
-const HeroRow = ({
+const HeroRowBig = ({
   rowData,
 }) => {
   return (
@@ -14,7 +14,7 @@ const HeroRow = ({
         translateY={[ '0vh', '100vh' ]}
         scale={[1,1.25]}
       >
-        <div className="bg_img_container" style={{backgroundImage: 'url(' + returnImageURL(rowData.image) + ')'}} />
+        {rowData.image && <div className="bg_img_container" style={{backgroundImage: 'url(' + returnImageURL(rowData.image) + ')'}} />}
       </Parallax>
       <div className="hero_wrapper">
         <div className="container">
@@ -33,8 +33,8 @@ const HeroRow = ({
   );
 };
 
-HeroRow.propTypes = {
+HeroRowBig.propTypes = {
   rowData: PropTypes.any,
 };
 
-export default HeroRow;
+export default HeroRowBig;

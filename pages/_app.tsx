@@ -42,11 +42,12 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ParallaxProvider>
       <Layout
-        headerPageTitle={ pageProps.pageData?.page_title }
-        headerMetaDesc={ pageProps.pageData?.meta_description }
         footerData={ pageProps.footerData }
         headerData={ pageProps.headerData }
+        headerMetaDesc={ pageProps.pageData?.meta_description }
+        headerPageTitle={ pageProps.pageData?.page_title }
         headerShareImage={ pageProps.pageData?.share_image }
+        isHeroBig={ pageProps.isHeroBig ? true : false }
       >
         <Component {...pageProps} />
       </Layout>

@@ -9,6 +9,7 @@ const Header = ({
   headerMetaDesc,
   headerPageTitle,
   headerShareImage,
+  isHeroBig,
 }) => {
   const router = useRouter();
   const thePageSlug = router.pathname.slice(1).toLowerCase();
@@ -24,7 +25,6 @@ const Header = ({
     };
     window.addEventListener( 'resize', handleResize );
   },[ setMobileNavState ]);
-
 
   return (
     <>
@@ -47,7 +47,7 @@ const Header = ({
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-      <nav className={`global_header${thePageSlug ? ' ' + thePageSlug : ' home'}`}>
+      <nav className={`global_header${thePageSlug ? ' ' + thePageSlug : ' home'}${isHeroBig ? ' big_hero' : ''}`}>
         <div className="container">
           <div className="d-flex align-items-center justify-content-between py-3">
             <div className="get_yourself_home">
@@ -56,9 +56,13 @@ const Header = ({
               }
             </div>
             <div className="nav_links d-none d-md-flex">
-              {headerData?.nav_links && headerData.nav_links.map( ( item, i ) => (
-                <Link key={i} href={item.url} className="nav_link btn">{item.text}</Link>
-              ))}
+              {headerData?.nav_links && headerData.nav_links.map( ( item, i ) => {
+                const matchSlug = item.url.replace( /^\//, '' ).toLowerCase() === thePageSlug;
+                return (
+                  <Link key={i} href={item.url} className={`nav_link${matchSlug ? ' active' : ''} btn`}>{item.text}</Link>
+                )
+              }
+              )}
             </div>
             <div className="nav_links d-flex d-md-none">
               <button className={`mobile_nav_toggle${ mobileNavState ? ' active' : '' } btn`} onClick={() => toggleMobileNav()}>Menu</button>
@@ -88,6 +92,7 @@ Header.propTypes = {
   headerMetaDesc: PropTypes.any,
   headerPageTitle: PropTypes.any,
   headerShareImage: PropTypes.any,
+  isHeroBig: PropTypes.bool,
 };
 
 export default Header;
