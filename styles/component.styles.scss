@@ -30,18 +30,22 @@ $jss_yellow: #fc0;
   }
   .nav_links {
     .nav_link {
+      border-radius: 0;
       color: $jss_ink;
       text-decoration: none;
       transition: $animate_all_200;
-      border-radius: 0;
       &:hover {
         color: $jss_blue;
         text-decoration: underline;
       }
+      &.active,
+      &:focus {
+        background-color: $jss_ink !important;
+        color: $jss_paper !important;
+      }
     }
   }
-  &.home,
-  &.about {
+  &.big_hero {
     position: absolute;
     .home_link {
       color: $jss_paper;
