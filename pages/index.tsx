@@ -4,6 +4,7 @@ import { queryPage, queryHeader, queryFooter } from '@/lib/groqQueries';
 import {
   BlockContent,
   BlockImage,
+  GridOfImages,
   HeroRow,
   HeroRowBig,
 } from '@/components';
@@ -49,6 +50,11 @@ export default function HomePage({pageData, isHeroBig}:HomeProps) {
               if (section._type === 'imageBlock') {
                 return(
                   <BlockImage blockData={section} key={i} />
+                );
+              }
+              if (section._type === 'imageGrid') {
+                return (
+                  <GridOfImages blockData={section} key={i} />
                 );
               }
             })}

@@ -188,10 +188,18 @@ $jss_yellow: #fc0;
           font-size: 1.5em;
           margin: 0;
         }
+        a {
+          color: $jss_paper;
+          &:hover {
+            color: $jss_yellow;
+          }
+        }
       }
       .cta_wrapper {
         margin-top: 1em;
         .cta {
+          font-size: 1.25em;
+          padding: .25em .75em;
           background-color: $jss_paper;
           border-radius: 0;
           color: $jss_ink;
@@ -213,6 +221,12 @@ $jss_yellow: #fc0;
 
 
 .block_content {
+  .section_title {
+    position: relative;
+    .sr-only {
+      visibility: hidden;
+    }
+  }
   .cta_wrapper {
     .cta {
       color: $jss_ink;
@@ -361,6 +375,8 @@ $jss_yellow: #fc0;
 =========================================== */
 
 .grid_of_images {
+  padding-bottom: 8rem;
+  padding-top: 8rem;
   .image_wrapper {
     .image_title {
       margin-top: 1em;
