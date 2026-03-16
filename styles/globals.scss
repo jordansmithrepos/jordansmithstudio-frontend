@@ -75,9 +75,9 @@ a {
   padding: 1em;
   transition: $animate_all_200;
   border: 1px dotted #0000;
-  &:hover {
-    border-color: $jss_yellow $jss_red $jss_ink $jss_blue;
-  }
+  // &:hover {
+  //   border-color: $jss_yellow $jss_red $jss_ink $jss_blue;
+  // }
 }
 
 
